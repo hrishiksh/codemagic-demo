@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../data/author.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../data/author.dart';
+import '../data/network_service.dart';
 
 class AuthorDetailsPage extends StatefulWidget {
   final Author author;
@@ -32,7 +33,7 @@ class _AuthorDetailsPageState extends State<AuthorDetailsPage> {
           children: [
             const SizedBox(height: 20),
             Image.network(
-              "https://images.quotable.dev/profile/400/${widget.author.slug}.jpg",
+              NetworkService().authorImageLink(slug: widget.author.slug),
               frameBuilder: ((context, child, frame, wasSynchronouslyLoaded) {
                 return Container(
                   height: 100,

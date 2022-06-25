@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../data/fetch_author_list.dart';
+import '../data/network_service.dart';
 import '../data/author_list.dart';
 import '../widgets/custom_listile.dart';
 
@@ -15,7 +15,7 @@ class _HomepageState extends State<Homepage> {
 
   @override
   void initState() {
-    authorList = fetchAuthorList();
+    authorList = NetworkService().fetchAuthorList();
     super.initState();
   }
 
